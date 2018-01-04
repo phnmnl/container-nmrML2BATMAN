@@ -1,3 +1,5 @@
+![Logo](nmrml2batman.png)
+
 # nmrML2BATMAN
 Version: 1.0
 
