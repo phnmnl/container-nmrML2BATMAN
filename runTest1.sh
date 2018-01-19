@@ -1,11 +1,13 @@
 #!/bin/bash
 
-apt-get update -y && apt-get install -y --no-install-recommends wget ca-certificates
+apt-get update -y && apt-get install -y --no-install-recommends wget ca-certificates unzip
 
 #download test data
 mkdir testDir
 
-wget https://github.com/jianlianggao/container-nmrML2BATMAN/blob/master/test_data/mesa_bruker_nmrml_conv_local.zip?raw=true -O ./testDir/mesa_bruker_nmrml_conv_local.zip
+wget https://github.com/jianlianggao/container-nmrML2BATMAN/blob/master/test_data/mesa_bruker_nmrml_conv_local.zip?raw=true -O ./mesa_bruker_nmrml_conv_local.zip
+
+unzip -q -d ./testDir ./mesa_bruker_nmrml_conv_local.zip
 
 nmrML2batman.R -i ./testDir
 
