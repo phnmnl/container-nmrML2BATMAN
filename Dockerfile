@@ -19,5 +19,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends r-base r-base-d
 ADD nmrML2batman.R /usr/local/bin
 RUN chmod 0755 /usr/local/bin/nmrML2batman.R
 
+ADD runTest1.sh /usr/local/bin
+RUN chmod 0755 /usr/local/bin/runTest1.sh
+
 # Define entry point, useful for generale use
-ENTRYPOINT ["nmrML2batman.R"]
+ENTRYPOINT ["runTest1.sh"]
